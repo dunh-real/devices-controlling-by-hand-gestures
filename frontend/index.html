@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điều khiển thiết bị bằng cử chỉ tay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Camera Section -->
+        <div class="camera-section">
+            <video id="video" autoplay playsinline></video>
+            <canvas id="canvas" style="display:none;"></canvas>
+            <img id="processed" alt="Processed frame">
+            
+            <div class="info-panel">
+                <div class="gesture-info">
+                    <span>Chế độ: <strong id="mode">Chọn thiết bị</strong></span>
+                    <span>Ngón tay: <strong id="finger-count">0</strong></span>
+                    <span>Cử chỉ: <strong id="gesture">-</strong></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Devices Section -->
+        <div class="devices-section">
+            <div class="device" id="device-1">
+                <div class="device-header">
+                    <h3>🌡️ Điều hòa</h3>
+                    <span class="device-id">ID: 1</span>
+                </div>
+                <div class="device-status">
+                    <span class="power-status">OFF</span>
+                </div>
+                <div class="device-controls">
+                    <p>Nhiệt độ: <strong class="temp">25</strong>°C</p>
+                    <small>Xoay tay lên/xuống</small>
+                </div>
+            </div>
+            
+            <div class="device" id="device-2">
+                <div class="device-header">
+                    <h3>🌀 Quạt</h3>
+                    <span class="device-id">ID: 2</span>
+                </div>
+                <div class="device-status">
+                    <span class="power-status">OFF</span>
+                </div>
+                <div class="device-controls">
+                    <p>Tốc độ: <strong class="speed">1</strong>/3</p>
+                    <small>Zoom để thay đổi</small>
+                </div>
+            </div>
+            
+            <div class="device" id="device-3">
+                <div class="device-header">
+                    <h3>📺 TV</h3>
+                    <span class="device-id">ID: 3</span>
+                </div>
+                <div class="device-status">
+                    <span class="power-status">OFF</span>
+                </div>
+                <div class="device-controls">
+                    <p>Kênh: <strong class="channel">1</strong></p>
+                    <small>Vuốt trái/phải</small>
+                </div>
+            </div>
+            
+            <div class="device" id="device-4">
+                <div class="device-header">
+                    <h3>💡 Đèn</h3>
+                    <span class="device-id">ID: 4</span>
+                </div>
+                <div class="device-status">
+                    <span class="power-status">OFF</span>
+                </div>
+                <div class="device-controls">
+                    <p>Độ sáng: <strong class="brightness">50</strong>%</p>
+                    <small>Zoom để điều chỉnh</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
